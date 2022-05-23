@@ -1,0 +1,1 @@
+# altkom-springcloud-lab05-configuration
