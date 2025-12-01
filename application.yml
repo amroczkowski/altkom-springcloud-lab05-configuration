@@ -26,3 +26,17 @@ management:
     export:
       zipkin:
         endpoint: http://localhost:9411/api/v2/spans
+logging:
+  pattern:
+    level: "%5p [%X{traceId:-},%X{spanId:-}]"
+  level:
+    feign: DEBUG
+    org.springframework.cloud.openfeign: DEBUG
+    pl.altkom.springcloud.lab05.configserver.projectservice.client: DEBUG
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: FULL
+        requestInterceptors:
+          - pl.altkom.springcloud.lab05.configserver.projectservice.client.interceptor.RequestHeaderCustomizerInterceptor
