@@ -6,9 +6,9 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     hostname: localhost
-spring:
-  zipkin:
-    base-url: http://localhost:9411/
+#spring:
+#  zipkin:
+#    base-url: http://localhost:9411/
 management:
   endpoints:
     web:
@@ -17,13 +17,13 @@ management:
   endpoint:
     health:
       show-details: always
-  tracing:
-    enabled: true
-    sampling:
-      probability: 1.0
-    propagation:
-      type: B3
-    export:
-      zipkin:
-        endpoint: http://localhost:9411/api/v2/spans
+#  tracing:
+#    enabled: true
+#    sampling:
+#      probability: 1.0
+#    propagation:
+#      type: B3
+#    export:
+#      zipkin:
+#        endpoint: http://localhost:9411/api/v2/spans
 
